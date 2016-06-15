@@ -1,0 +1,60 @@
+version: '2'
+services:
+  oraclexe:
+    container_name: ora.sample.com
+    build: 
+        context: .
+        dockerfile: oraclexe/Dockerfile
+    ports:
+     - "1521:1521"
+  mssql:
+    container_name: msq.sample.com
+    build: 
+        context: .
+        dockerfile: mssql/Dockerfile
+    ports:
+     - "1433:1433"
+  activemq:
+    container_name: bkr.sample.com
+    build: 
+        context: .
+        dockerfile: activemq/Dockerfile
+    ports:
+     - "8161:8161"
+     - "61616:61616"
+  sftp:
+    container_name: ftp.sample.com
+    build: 
+        context: .
+        dockerfile: sftp/Dockerfile
+    volumes:
+        - /c/Users/ck/share/in:/home/foo/share/in
+        - /c/Users/ck/share/out:/home/foo/share/out
+        - /c/Users/ck/share/err:/home/foo/share/err
+    ports:
+        - "2222:22"
+    command: foo:123:1001
+  dss:
+    container_name: dss.sample.com
+    build: 
+        context: .
+        dockerfile: dss/Dockerfile
+    environment:
+      JAVA_OPTS: "$JAVA_OPTS -Duser.timezone=+05:30"
+    ports:
+     - "9448:9443"
+     - "9768:9763"
+  esb:
+    container_name: esb.sample.com
+    build:
+      context: .
+      dockerfile: esb/Dockerfile
+    environment:
+      JAVA_OPTS: "$JAVA_OPTS -Duser.timezone=+05:30"
+    ports:
+      - "9764:9763"
+      - "9444:9443"
+      - "8281:8280"
+      - "8244:8243"
+      - "9999:9999"
+      - "11111:11111"

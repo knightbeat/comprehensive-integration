@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9ff9fc1c-1420-4558-a826-1630554f6633" activeEnvironment="Default" name="JCU" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1af435da-81ad-4d7e-b845-97f6592646dd" wsaVersion="NONE" name="sftp_writer_proxySoap11Binding" type="wsdl" bindingName="{http://ws.apache.org/axis2}sftp_writer_proxySoap11Binding" soapVersion="1_1" anonymous="optional" definition="https://docker.machine:9444/services/sftp_writer_proxy?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://docker.machine:9444/services/sftp_writer_proxy?wsdl"><con:part><con:url>https://docker.machine:9444/services/sftp_writer_proxy?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.apache.org/axis2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types/>
+  <wsdl:message name="in"/>
+  <wsdl:message name="out"/>
+  <wsdl:portType name="sftp_writer_proxyPortType">
+    <wsdl:operation name="mediate">
+      <wsdl:input message="tns:in" wsaw:Action="urn:mediate"/>
+      <wsdl:output message="tns:out" wsaw:Action="urn:mediateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="sftp_writer_proxySoap11Binding" type="tns:sftp_writer_proxyPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="sftp_writer_proxySoap12Binding" type="tns:sftp_writer_proxyPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap12:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="sftp_writer_proxyHttpBinding" type="tns:sftp_writer_proxyPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="mediate">
+      <http:operation location="mediate"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="sftp_writer_proxy">
+    <wsdl:port name="sftp_writer_proxyHttpsSoap11Endpoint" binding="tns:sftp_writer_proxySoap11Binding">
+      <soap:address location="https://2be787e5979f:8243/services/sftp_writer_proxy.sftp_writer_proxyHttpsSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="sftp_writer_proxyHttpSoap11Endpoint" binding="tns:sftp_writer_proxySoap11Binding">
+      <soap:address location="http://2be787e5979f:8280/services/sftp_writer_proxy.sftp_writer_proxyHttpSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="sftp_writer_proxyHttpSoap12Endpoint" binding="tns:sftp_writer_proxySoap12Binding">
+      <soap12:address location="http://2be787e5979f:8280/services/sftp_writer_proxy.sftp_writer_proxyHttpSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="sftp_writer_proxyHttpsSoap12Endpoint" binding="tns:sftp_writer_proxySoap12Binding">
+      <soap12:address location="https://2be787e5979f:8243/services/sftp_writer_proxy.sftp_writer_proxyHttpsSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="sftp_writer_proxyHttpEndpoint" binding="tns:sftp_writer_proxyHttpBinding">
+      <http:address location="http://2be787e5979f:8280/services/sftp_writer_proxy.sftp_writer_proxyHttpEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="sftp_writer_proxyHttpsEndpoint" binding="tns:sftp_writer_proxyHttpBinding">
+      <http:address location="https://2be787e5979f:8243/services/sftp_writer_proxy.sftp_writer_proxyHttpsEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://docker.machine:8281/services/sftp_writer_proxy.sftp_writer_proxyHttpSoap11Endpoint</con:endpoint><con:endpoint>https://2be787e5979f:8243/services/sftp_writer_proxy.sftp_writer_proxyHttpsSoap11Endpoint</con:endpoint></con:endpoints><con:operation id="f93214df-dce0-4646-a561-6a89fb3e2714" isOneWay="false" action="urn:mediate" name="mediate" bindingOperationName="mediate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8156315a-6cd2-40c6-90c6-3ee4a0a8207c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:8281/services/sftp_writer_proxy.sftp_writer_proxyHttpSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <CATALOG>\r
+         <CD>\r
+            <TITLE>Empire Burlesque</TITLE>\r
+            <ARTIST>Bob Dylan</ARTIST>\r
+            <COUNTRY>USA</COUNTRY>\r
+            <COMPANY>Columbia</COMPANY>\r
+            <PRICE>10.90</PRICE>\r
+            <YEAR>1985</YEAR>\r
+         </CD>\r
+         <CD>\r
+            <TITLE>Hide your heart</TITLE>\r
+            <ARTIST>Bonnie Tyler</ARTIST>\r
+            <COUNTRY>UK</COUNTRY>\r
+            <COMPANY>CBS Records</COMPANY>\r
+            <PRICE>9.90</PRICE>\r
+            <YEAR>1988</YEAR>\r
+         </CD>\r
+         <CD>\r
+            <TITLE>Greatest Hits</TITLE>\r
+            <ARTIST>Dolly Parton</ARTIST>\r
+            <COUNTRY>USA</COUNTRY>\r
+            <COMPANY>RCA</COMPANY>\r
+            <PRICE>9.90</PRICE>\r
+            <YEAR>1982</YEAR>\r
+         </CD>\r
+         <CD>\r
+            <TITLE>Still got the blues</TITLE>\r
+            <ARTIST>Gary Moore</ARTIST>\r
+            <COUNTRY>UK</COUNTRY>\r
+            <COMPANY>Virgin records</COMPANY>\r
+            <PRICE>10.20</PRICE>\r
+            <YEAR>1990</YEAR>\r
+         </CD>\r
+         <CD>\r
+            <TITLE>Eros</TITLE>\r
+            <ARTIST>Eros Ramazzotti</ARTIST>\r
+            <COUNTRY>EU</COUNTRY>\r
+            <COMPANY>BMG</COMPANY>\r
+            <PRICE>9.90</PRICE>\r
+            <YEAR>1997</YEAR>\r
+         </CD>\r
+      </CATALOG>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="37df2fbf-f1dc-415b-8ef6-df140292b240" wsaVersion="NONE" name="CourseAdminServiceSOAP11Binding" type="wsdl" bindingName="{http://dss.courses.demo.com}CourseAdminServiceSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="https://docker.machine:9448/services/CourseAdminService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://docker.machine:9448/services/CourseAdminService?wsdl"><con:part><con:url>https://docker.machine:9448/services/CourseAdminService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://dss.courses.demo.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://dss.courses.demo.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://ws.wso2.org/dataservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation/>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dss.courses.demo.com">
+      <xs:element name="insert_enrollments_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="student_id" nillable="true" type="xs:string"/>
+            <xs:element name="enrolment_time" nillable="true" type="xs:int"/>
+            <xs:element name="enrolment_date" nillable="true" type="xs:dateTime"/>
+            <xs:element name="subject" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="select_all_enrollments_operation">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="enrollmentsCollection" type="ns0:enrollmentsCollection"/>
+      <xs:complexType name="enrollmentsCollection">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="enrollments" type="ns0:enrollments"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enrollments">
+        <xs:sequence>
+          <xs:element name="student_id" nillable="true" type="xs:string"/>
+          <xs:element name="enrolment_time" nillable="true" type="xs:integer"/>
+          <xs:element name="enrolment_date" nillable="true" type="xs:dateTime"/>
+          <xs:element name="subject" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="select_with_key_enrollments_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="subject" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="update_enrollments_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enrolment_time" nillable="true" type="xs:int"/>
+            <xs:element name="enrolment_date" nillable="true" type="xs:dateTime"/>
+            <xs:element name="subject" nillable="true" type="xs:string"/>
+            <xs:element name="student_id" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="delete_enrollments_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="student_id" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+      <xs:element name="DataServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="current_params" type="xs:string"/>
+            <xs:element name="current_request_name" type="xs:string"/>
+            <xs:element name="nested_exception" type="xs:string"/>
+            <xs:element name="source_data_service">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="location" type="xs:string"/>
+                  <xs:element name="default_namespace" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="data_service_name" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ds_code" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="REQUEST_STATUS" type="xs:string"/>
+      <xs:element name="DATA_SERVICE_RESPONSE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="insert_enrollments_operationRequest">
+    <wsdl:part name="parameters" element="ns0:insert_enrollments_operation"/>
+  </wsdl:message>
+  <wsdl:message name="select_all_enrollments_operationRequest">
+    <wsdl:part name="parameters" element="ns0:select_all_enrollments_operation"/>
+  </wsdl:message>
+  <wsdl:message name="select_all_enrollments_operationResponse">
+    <wsdl:part name="parameters" element="ns0:enrollmentsCollection"/>
+  </wsdl:message>
+  <wsdl:message name="DataServiceFault">
+    <wsdl:part name="parameters" element="ns1:DataServiceFault"/>
+  </wsdl:message>
+  <wsdl:message name="select_with_key_enrollments_operationRequest">
+    <wsdl:part name="parameters" element="ns0:select_with_key_enrollments_operation"/>
+  </wsdl:message>
+  <wsdl:message name="select_with_key_enrollments_operationResponse">
+    <wsdl:part name="parameters" element="ns0:enrollmentsCollection"/>
+  </wsdl:message>
+  <wsdl:message name="update_enrollments_operationRequest">
+    <wsdl:part name="parameters" element="ns0:update_enrollments_operation"/>
+  </wsdl:message>
+  <wsdl:message name="delete_enrollments_operationRequest">
+    <wsdl:part name="parameters" element="ns0:delete_enrollments_operation"/>
+  </wsdl:message>
+  <wsdl:portType name="CourseAdminServicePortType">
+    <wsdl:operation name="insert_enrollments_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:insert_enrollments_operationRequest" wsaw:Action="urn:insert_enrollments_operation"/>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_enrollments_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:select_all_enrollments_operationRequest" wsaw:Action="urn:select_all_enrollments_operation"/>
+      <wsdl:output message="ns0:select_all_enrollments_operationResponse" wsaw:Action="urn:select_all_enrollments_operationResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:select_all_enrollments_operationDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="select_with_key_enrollments_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:select_with_key_enrollments_operationRequest" wsaw:Action="urn:select_with_key_enrollments_operation"/>
+      <wsdl:output message="ns0:select_with_key_enrollments_operationResponse" wsaw:Action="urn:select_with_key_enrollments_operationResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:select_with_key_enrollments_operationDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="update_enrollments_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:update_enrollments_operationRequest" wsaw:Action="urn:update_enrollments_operation"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete_enrollments_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:delete_enrollments_operationRequest" wsaw:Action="urn:delete_enrollments_operation"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CourseAdminServiceSOAP11Binding" type="ns0:CourseAdminServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="insert_enrollments_operation">
+      <soap:operation soapAction="urn:insert_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_enrollments_operation">
+      <soap:operation soapAction="urn:select_all_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="select_with_key_enrollments_operation">
+      <soap:operation soapAction="urn:select_with_key_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update_enrollments_operation">
+      <soap:operation soapAction="urn:update_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="delete_enrollments_operation">
+      <soap:operation soapAction="urn:delete_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CourseAdminServiceSOAP12Binding" type="ns0:CourseAdminServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="insert_enrollments_operation">
+      <soap12:operation soapAction="urn:insert_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_enrollments_operation">
+      <soap12:operation soapAction="urn:select_all_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="select_with_key_enrollments_operation">
+      <soap12:operation soapAction="urn:select_with_key_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update_enrollments_operation">
+      <soap12:operation soapAction="urn:update_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="delete_enrollments_operation">
+      <soap12:operation soapAction="urn:delete_enrollments_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CourseAdminServiceHttpBinding" type="ns0:CourseAdminServicePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="insert_enrollments_operation">
+      <http:operation location="insert_enrollments_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_enrollments_operation">
+      <http:operation location="select_all_enrollments_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="select_with_key_enrollments_operation">
+      <http:operation location="select_with_key_enrollments_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_enrollments_operation">
+      <http:operation location="update_enrollments_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="delete_enrollments_operation">
+      <http:operation location="delete_enrollments_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CourseAdminService">
+    <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:CourseAdminServiceSOAP11Binding">
+      <soap:address location="https://172.18.0.4:9443/services/CourseAdminService.SecureSOAP11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP11Endpoint" binding="ns0:CourseAdminServiceSOAP11Binding">
+      <soap:address location="http://172.18.0.4:9763/services/CourseAdminService.SOAP11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:CourseAdminServiceSOAP12Binding">
+      <soap12:address location="https://172.18.0.4:9443/services/CourseAdminService.SecureSOAP12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP12Endpoint" binding="ns0:CourseAdminServiceSOAP12Binding">
+      <soap12:address location="http://172.18.0.4:9763/services/CourseAdminService.SOAP12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SecureHTTPEndpoint" binding="ns0:CourseAdminServiceHttpBinding">
+      <http:address location="https://172.18.0.4:9443/services/CourseAdminService.SecureHTTPEndpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPEndpoint" binding="ns0:CourseAdminServiceHttpBinding">
+      <http:address location="http://172.18.0.4:9763/services/CourseAdminService.HTTPEndpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://docker.machine:8281/services/CourseAdminService.SOAP11Endpoint/</con:endpoint><con:endpoint>https://172.18.0.4:9443/services/CourseAdminService.SecureSOAP11Endpoint/</con:endpoint></con:endpoints><con:operation id="cce5f116-9335-48e3-bd39-40a4b65a5572" isOneWay="false" action="urn:delete_enrollments_operation" name="delete_enrollments_operation" bindingOperationName="delete_enrollments_operation" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8b1d983e-12ea-41a4-9c90-548a25310a8b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:8281/services/CourseAdminService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.courses.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:delete_enrollments_operation>\r
+         <dss:student_id>?</dss:student_id>\r
+      </dss:delete_enrollments_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:delete_enrollments_operation"/></con:call></con:operation><con:operation id="e7a2a64a-0680-476e-aef5-a2e511959fab" isOneWay="false" action="urn:insert_enrollments_operation" name="insert_enrollments_operation" bindingOperationName="insert_enrollments_operation" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="86277704-121c-4769-970e-3f71f2a1d135" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:8281/services/CourseAdminService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.courses.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:insert_enrollments_operation>\r
+         <dss:student_id>?</dss:student_id>\r
+         <dss:enrolment_time>?</dss:enrolment_time>\r
+         <dss:enrolment_date>?</dss:enrolment_date>\r
+         <dss:subject>?</dss:subject>\r
+      </dss:insert_enrollments_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:insert_enrollments_operation"/></con:call></con:operation><con:operation id="14cc2174-557b-41ad-9d05-75b420cf8035" isOneWay="false" action="urn:select_all_enrollments_operation" name="select_all_enrollments_operation" bindingOperationName="select_all_enrollments_operation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6a272a60-df78-47de-a91a-cdb2b52cd904" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:9768/services/CourseAdminService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.courses.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:select_all_enrollments_operation/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:select_all_enrollments_operation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f07425d2-71c2-4216-93b9-50fb5a0d619b" isOneWay="false" action="urn:select_with_key_enrollments_operation" name="select_with_key_enrollments_operation" bindingOperationName="select_with_key_enrollments_operation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d47b84fb-7b04-4e7c-b98d-22d7bedf4184" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:9768/services/CourseAdminService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.courses.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:select_with_key_enrollments_operation>\r
+         <dss:subject>ERP2GW</dss:subject>\r
+      </dss:select_with_key_enrollments_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:select_with_key_enrollments_operation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d880ee7d-40af-40ed-80b5-2265cdc85804" isOneWay="false" action="urn:update_enrollments_operation" name="update_enrollments_operation" bindingOperationName="update_enrollments_operation" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5867bdf7-22ac-45b3-8b45-c3a585f2d826" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:8281/services/CourseAdminService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.courses.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:update_enrollments_operation>\r
+         <dss:enrolment_time>?</dss:enrolment_time>\r
+         <dss:enrolment_date>?</dss:enrolment_date>\r
+         <dss:subject>?</dss:subject>\r
+         <dss:student_id>?</dss:student_id>\r
+      </dss:update_enrollments_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:update_enrollments_operation"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="33409338-58d3-4d0e-b501-061cde73ce3d" wsaVersion="NONE" name="StudentsDataServiceSOAP11Binding" type="wsdl" bindingName="{http://dss.students.demo.com}StudentsDataServiceSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="https://docker.machine:9448/services/StudentsDataService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://docker.machine:9448/services/StudentsDataService?wsdl"><con:part><con:url>https://docker.machine:9448/services/StudentsDataService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://dss.students.demo.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://dss.students.demo.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://ws.wso2.org/dataservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation/>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dss.students.demo.com">
+      <xs:element name="select_with_key_STUDENTS_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="STUDENT_ID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="STUDENTSCollection" type="ns0:STUDENTSCollection"/>
+      <xs:complexType name="STUDENTSCollection">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="STUDENTS" type="ns0:STUDENTS"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="STUDENTS">
+        <xs:sequence>
+          <xs:element name="STUDENT_ID" nillable="true" type="xs:string"/>
+          <xs:element name="FIRST_NAME" nillable="true" type="xs:string"/>
+          <xs:element name="LAST_NAME" nillable="true" type="xs:string"/>
+          <xs:element name="DATE_OF_BIRTH" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="insert_STUDENTS_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="STUDENT_ID" nillable="true" type="xs:string"/>
+            <xs:element name="FIRST_NAME" nillable="true" type="xs:string"/>
+            <xs:element name="LAST_NAME" nillable="true" type="xs:string"/>
+            <xs:element name="DATE_OF_BIRTH" nillable="true" type="xs:dateTime"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="update_STUDENTS_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FIRST_NAME" nillable="true" type="xs:string"/>
+            <xs:element name="LAST_NAME" nillable="true" type="xs:string"/>
+            <xs:element name="DATE_OF_BIRTH" nillable="true" type="xs:dateTime"/>
+            <xs:element name="STUDENT_ID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="delete_STUDENTS_operation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="STUDENT_ID" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="select_all_STUDENTS_operation">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+      <xs:element name="DataServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="current_params" type="xs:string"/>
+            <xs:element name="current_request_name" type="xs:string"/>
+            <xs:element name="nested_exception" type="xs:string"/>
+            <xs:element name="source_data_service">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="location" type="xs:string"/>
+                  <xs:element name="default_namespace" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="data_service_name" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ds_code" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="REQUEST_STATUS" type="xs:string"/>
+      <xs:element name="DATA_SERVICE_RESPONSE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="select_with_key_STUDENTS_operationRequest">
+    <wsdl:part name="parameters" element="ns0:select_with_key_STUDENTS_operation"/>
+  </wsdl:message>
+  <wsdl:message name="select_with_key_STUDENTS_operationResponse">
+    <wsdl:part name="parameters" element="ns0:STUDENTSCollection"/>
+  </wsdl:message>
+  <wsdl:message name="DataServiceFault">
+    <wsdl:part name="parameters" element="ns1:DataServiceFault"/>
+  </wsdl:message>
+  <wsdl:message name="insert_STUDENTS_operationRequest">
+    <wsdl:part name="parameters" element="ns0:insert_STUDENTS_operation"/>
+  </wsdl:message>
+  <wsdl:message name="update_STUDENTS_operationRequest">
+    <wsdl:part name="parameters" element="ns0:update_STUDENTS_operation"/>
+  </wsdl:message>
+  <wsdl:message name="delete_STUDENTS_operationRequest">
+    <wsdl:part name="parameters" element="ns0:delete_STUDENTS_operation"/>
+  </wsdl:message>
+  <wsdl:message name="select_all_STUDENTS_operationRequest">
+    <wsdl:part name="parameters" element="ns0:select_all_STUDENTS_operation"/>
+  </wsdl:message>
+  <wsdl:message name="select_all_STUDENTS_operationResponse">
+    <wsdl:part name="parameters" element="ns0:STUDENTSCollection"/>
+  </wsdl:message>
+  <wsdl:portType name="StudentsDataServicePortType">
+    <wsdl:operation name="select_with_key_STUDENTS_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:select_with_key_STUDENTS_operationRequest" wsaw:Action="urn:select_with_key_STUDENTS_operation"/>
+      <wsdl:output message="ns0:select_with_key_STUDENTS_operationResponse" wsaw:Action="urn:select_with_key_STUDENTS_operationResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:select_with_key_STUDENTS_operationDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="insert_STUDENTS_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:insert_STUDENTS_operationRequest" wsaw:Action="urn:insert_STUDENTS_operation"/>
+    </wsdl:operation>
+    <wsdl:operation name="update_STUDENTS_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:update_STUDENTS_operationRequest" wsaw:Action="urn:update_STUDENTS_operation"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete_STUDENTS_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:delete_STUDENTS_operationRequest" wsaw:Action="urn:delete_STUDENTS_operation"/>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_STUDENTS_operation">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:select_all_STUDENTS_operationRequest" wsaw:Action="urn:select_all_STUDENTS_operation"/>
+      <wsdl:output message="ns0:select_all_STUDENTS_operationResponse" wsaw:Action="urn:select_all_STUDENTS_operationResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:select_all_STUDENTS_operationDataServiceFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StudentsDataServiceSOAP11Binding" type="ns0:StudentsDataServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="select_with_key_STUDENTS_operation">
+      <soap:operation soapAction="urn:select_with_key_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insert_STUDENTS_operation">
+      <soap:operation soapAction="urn:insert_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="update_STUDENTS_operation">
+      <soap:operation soapAction="urn:update_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="delete_STUDENTS_operation">
+      <soap:operation soapAction="urn:delete_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_STUDENTS_operation">
+      <soap:operation soapAction="urn:select_all_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StudentsDataServiceSOAP12Binding" type="ns0:StudentsDataServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="select_with_key_STUDENTS_operation">
+      <soap12:operation soapAction="urn:select_with_key_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insert_STUDENTS_operation">
+      <soap12:operation soapAction="urn:insert_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="update_STUDENTS_operation">
+      <soap12:operation soapAction="urn:update_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="delete_STUDENTS_operation">
+      <soap12:operation soapAction="urn:delete_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_STUDENTS_operation">
+      <soap12:operation soapAction="urn:select_all_STUDENTS_operation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StudentsDataServiceHttpBinding" type="ns0:StudentsDataServicePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="select_with_key_STUDENTS_operation">
+      <http:operation location="select_with_key_STUDENTS_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_STUDENTS_operation">
+      <http:operation location="insert_STUDENTS_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="update_STUDENTS_operation">
+      <http:operation location="update_STUDENTS_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="delete_STUDENTS_operation">
+      <http:operation location="delete_STUDENTS_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="select_all_STUDENTS_operation">
+      <http:operation location="select_all_STUDENTS_operation"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StudentsDataService">
+    <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:StudentsDataServiceSOAP11Binding">
+      <soap:address location="https://172.18.0.4:9443/services/StudentsDataService.SecureSOAP11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP11Endpoint" binding="ns0:StudentsDataServiceSOAP11Binding">
+      <soap:address location="http://172.18.0.4:9763/services/StudentsDataService.SOAP11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:StudentsDataServiceSOAP12Binding">
+      <soap12:address location="https://172.18.0.4:9443/services/StudentsDataService.SecureSOAP12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP12Endpoint" binding="ns0:StudentsDataServiceSOAP12Binding">
+      <soap12:address location="http://172.18.0.4:9763/services/StudentsDataService.SOAP12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="SecureHTTPEndpoint" binding="ns0:StudentsDataServiceHttpBinding">
+      <http:address location="https://172.18.0.4:9443/services/StudentsDataService.SecureHTTPEndpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPEndpoint" binding="ns0:StudentsDataServiceHttpBinding">
+      <http:address location="http://172.18.0.4:9763/services/StudentsDataService.HTTPEndpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://172.18.0.4:9763/services/StudentsDataService.SOAP11Endpoint/</con:endpoint><con:endpoint>https://172.18.0.4:9443/services/StudentsDataService.SecureSOAP11Endpoint/</con:endpoint></con:endpoints><con:operation id="132ee788-4874-474a-8159-6b30fed6315c" isOneWay="false" action="urn:delete_STUDENTS_operation" name="delete_STUDENTS_operation" bindingOperationName="delete_STUDENTS_operation" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="02b7a38b-7ee6-4532-8f84-8fbeea32574d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.18.0.4:9763/services/StudentsDataService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.students.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:delete_STUDENTS_operation>\r
+         <dss:STUDENT_ID>?</dss:STUDENT_ID>\r
+      </dss:delete_STUDENTS_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:delete_STUDENTS_operation"/></con:call></con:operation><con:operation id="a22ee896-58ad-4ec7-9875-ebb4b6f7f233" isOneWay="false" action="urn:insert_STUDENTS_operation" name="insert_STUDENTS_operation" bindingOperationName="insert_STUDENTS_operation" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="895edaab-baed-40c2-a127-9086c5be7c96" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.18.0.4:9763/services/StudentsDataService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.students.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:insert_STUDENTS_operation>\r
+         <dss:STUDENT_ID>?</dss:STUDENT_ID>\r
+         <dss:FIRST_NAME>?</dss:FIRST_NAME>\r
+         <dss:LAST_NAME>?</dss:LAST_NAME>\r
+         <dss:DATE_OF_BIRTH>?</dss:DATE_OF_BIRTH>\r
+      </dss:insert_STUDENTS_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:insert_STUDENTS_operation"/></con:call></con:operation><con:operation id="ce9e7128-1ca2-4e78-98e7-69ecc28d3ec0" isOneWay="false" action="urn:select_all_STUDENTS_operation" name="select_all_STUDENTS_operation" bindingOperationName="select_all_STUDENTS_operation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6830a015-72bd-4cb4-a439-655d3615da44" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:9768/services/StudentsDataService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.students.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:select_all_STUDENTS_operation/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:select_all_STUDENTS_operation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="77781f37-56ec-4ae3-a65d-8d7462c10ca2" isOneWay="false" action="urn:select_with_key_STUDENTS_operation" name="select_with_key_STUDENTS_operation" bindingOperationName="select_with_key_STUDENTS_operation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dea0356a-8313-4601-b288-1ede34fb854b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://docker.machine:9768/services/StudentsDataService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.students.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:select_with_key_STUDENTS_operation>\r
+         <dss:STUDENT_ID>02341335</dss:STUDENT_ID>\r
+      </dss:select_with_key_STUDENTS_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:select_with_key_STUDENTS_operation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f0c254fc-1dcd-4967-9f3c-55c73795d4e2" isOneWay="false" action="urn:update_STUDENTS_operation" name="update_STUDENTS_operation" bindingOperationName="update_STUDENTS_operation" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d6f832db-3e5d-4bc6-9fc6-f692cdf34651" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.18.0.4:9763/services/StudentsDataService.SOAP11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.students.demo.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dss:update_STUDENTS_operation>\r
+         <dss:FIRST_NAME>?</dss:FIRST_NAME>\r
+         <dss:LAST_NAME>?</dss:LAST_NAME>\r
+         <dss:DATE_OF_BIRTH>?</dss:DATE_OF_BIRTH>\r
+         <dss:STUDENT_ID>?</dss:STUDENT_ID>\r
+      </dss:update_STUDENTS_operation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:update_STUDENTS_operation"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
